@@ -10,6 +10,7 @@ color white
 drawable bg_compose_background
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_task_completed
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
