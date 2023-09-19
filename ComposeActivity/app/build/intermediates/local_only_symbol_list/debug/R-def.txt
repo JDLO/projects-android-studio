@@ -15,6 +15,14 @@ mipmap ic_launcher_round
 string app_name
 string compose_long_desc
 string compose_short_desc
+string first_description
+string first_title
+string fourth_description
+string fourth_title
+string second_description
+string second_title
+string third_description
+string third_title
 string title_jetpack_compose_tutorial
 style Theme.ComposeActivity
 xml backup_rules

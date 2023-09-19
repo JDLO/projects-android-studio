@@ -172,6 +172,10 @@ string default_popup_window_title
 string dialog
 string dropdown_menu
 string expanded
+string first_description
+string first_title
+string fourth_description
+string fourth_title
 string in_progress
 string indeterminate
 string navigation_menu
@@ -180,10 +184,14 @@ string off
 string on
 string range_end
 string range_start
+string second_description
+string second_title
 string selected
 string status_bar_notification_info_overflow
 string tab
 string template_percent
+string third_description
+string third_title
 string title_jetpack_compose_tutorial
 style DialogWindowTheme
 style FloatingDialogTheme
