@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">presentation of me</string>
+    <string name="name_example">Juan David de la cruzada</string>
+    <string name="title_example">Ingeniero en Sistemas y computación</string>
+    <string name="first_description">juantienecorreo@claroquesi.com</string>
+    <string name="second_description">900123456</string>
+    <string name="third_description">juandavid.com</string>
+</resources>
