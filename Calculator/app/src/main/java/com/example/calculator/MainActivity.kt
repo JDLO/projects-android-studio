@@ -17,7 +17,6 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.runtime.mutableStateOf
@@ -55,17 +54,26 @@ fun TipTimeLayout() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
+        var amountInput by remember {mutableStateOf("0")}
+
+        val amount = amountInput.toDoubleOrNull() ?: 0.0
+        val tip = calculateTip(amount)
+
         Text(
             text = stringResource(R.string.calculate_tip),
             modifier = Modifier
                 .padding(bottom = 16.dp)
                 .align(alignment = Alignment.Start)
         )
-        EditNumberField(modifier = Modifier
+        EditNumberField(
+            value = amountInput,
+            onValueChange = {amountInput = it},
+            modifier = Modifier
             .padding(bottom = 32.dp)
-            .fillMaxWidth())
+            .fillMaxWidth()
+        )
         Text(
-            text = stringResource(R.string.tip_amount, "$0.00"),
+            text = stringResource(R.string.tip_amount, tip),
             style = MaterialTheme.typography.displaySmall
         )
         Spacer(modifier = Modifier.height(150.dp))
@@ -79,13 +87,8 @@ fun EditNumberField(
     onValueChange: (String) -> Unit,
     modifier: Modifier = Modifier
 ){
-    var amountInput by remember {mutableStateOf("0")}
-
-    val amount = amountInput.toDoubleOrNull() ?: 0.0
-    val tip = calculateTip(amount)
-
     TextField(
-        value = amountInput,
+        value = value,
         onValueChange = onValueChange,
         singleLine = true,
         label = { Text(stringResource(R.string.bill_amount)) },
