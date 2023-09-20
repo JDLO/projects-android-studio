@@ -79,7 +79,9 @@ fun FirstPart(){
             contentDescription = null,
             modifier = Modifier
                 .size(200.dp)
-                .background(Color(1))
+                .background(
+                    Color(0xFDC8E9E9)
+                )
         )
         TitlePresentation(title = stringResource(R.string.name_example))
         SubtitlePresentation(subtitle = stringResource(R.string.title_example))
@@ -90,8 +92,7 @@ fun FirstPart(){
 fun SecondPart(modifier: Modifier = Modifier){
     Column(
         modifier = modifier.padding(16.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        verticalArrangement = Arrangement.Center
     ) {
         DescriptionIcon(
             Icons.Default.Home,
@@ -118,7 +119,11 @@ fun TitlePresentation(title: String){
         fontSize = 32.sp,
         fontWeight = FontWeight.Bold,
         textAlign = TextAlign.Center,
-        modifier = Modifier.padding(top = 16.dp,bottom = 16.dp)
+        modifier = Modifier
+            .padding(
+                top = 16.dp,
+                bottom = 16.dp
+            )
     )
 }
 
@@ -136,7 +141,11 @@ fun DescriptionIcon(icon: ImageVector, descIcon: String, description: String, mo
         modifier = modifier.padding(10.dp)
     ){
         //TODO: Icon it's in this part of the code
-        Icon(icon, contentDescription = descIcon)
+        Icon(
+            icon,
+            contentDescription = descIcon,
+            modifier = Modifier.padding(end = 5.dp)
+        )
         Text(
             text = description
         )
