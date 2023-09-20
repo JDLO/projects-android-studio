@@ -17,6 +17,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material3.Divider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -137,10 +138,13 @@ fun SubtitlePresentation(subtitle: String){
 
 @Composable
 fun DescriptionIcon(icon: ImageVector, descIcon: String, description: String, modifier: Modifier = Modifier){
+    Divider(
+        color = Color.LightGray,
+        thickness = 1.dp
+    )
     Row(
         modifier = modifier.padding(10.dp)
     ){
-        //TODO: Icon it's in this part of the code
         Icon(
             icon,
             contentDescription = descIcon,
