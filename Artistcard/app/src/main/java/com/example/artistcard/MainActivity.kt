@@ -1,5 +1,6 @@
 package com.example.artistcard
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -128,7 +129,9 @@ fun ArtisCard(
     ) {
         Row(){
             ArtistAvatar(imageResource = artist.imageResource)
-            Column () {
+            Column (
+                modifier = Modifier.padding(16.dp)
+                    ) {
                 Text(
                     text = artist.name,
                     fontWeight = FontWeight.Bold
@@ -141,7 +144,9 @@ fun ArtisCard(
             }
         }
         Spacer(Modifier.size(16.dp))
-        Card(){
+        Card(
+            modifier = Modifier.fillMaxWidth()
+        ){
             Image(
                 painter = image,
                 contentDescription = null,
@@ -151,7 +156,10 @@ fun ArtisCard(
 
         }
         if(expanded){
-            Text(text = stringResource(id = R.string.app_name))
+            Text(
+                text = stringResource(id = R.string.app_name),
+                modifier = Modifier.padding(top = 16.dp)
+            )
         }
     }
 }
@@ -167,13 +175,16 @@ fun ArtistAvatar(imageResource: Painter){
                 .size(80.dp)
                 .clip(CircleShape)
         )
-        Icon(
-            Icons.Default.Star,
-            contentDescription = null,
-            Modifier
+        Surface(
+            shape = CircleShape,
+            modifier = Modifier
                 .align(Alignment.BottomEnd)
-                .border(BorderStroke(1.dp, Color(0xB3B3B3)))
-        )
+        ) {
+            Icon(
+                Icons.Default.Star,
+                contentDescription = null,
+            )
+        }
     }
 }
 
@@ -198,6 +209,16 @@ fun OpenDescription(article: String){
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
+    ArtistCardTheme {
+        HomeScreen()
+    }
+}
+
+@Preview(showBackground = true,
+    uiMode = Configuration.UI_MODE_NIGHT_YES or Configuration.UI_MODE_TYPE_NORMAL
+)
+@Composable
+fun Greeting2Preview() {
     ArtistCardTheme {
         HomeScreen()
     }
