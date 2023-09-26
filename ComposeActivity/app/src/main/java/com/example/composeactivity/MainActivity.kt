@@ -1,5 +1,6 @@
 package com.example.composeactivity
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -108,7 +109,9 @@ private fun CardCuadrant(
     }
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true,
+    uiMode = Configuration.UI_MODE_NIGHT_YES or Configuration.UI_MODE_TYPE_NORMAL
+)
 @Composable
 fun GreetingPreview() {
     ComposeActivityTheme {
