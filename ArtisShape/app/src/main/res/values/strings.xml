@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ArtisShape</string>
+    <string name="amanecer_sobre_el_bosque">Amanecer sobre el bosque</string>
+    <string name="lago_en_el_bosque">Lago en el bosque</string>
+    <string name="lago_al_pie_de_la_monta_a">Lago al pie de la montaña</string>
+    <string name="pexels">Pexels</string>
 </resources>
